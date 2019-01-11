@@ -12,6 +12,11 @@
     {{ template "_internal/twitter_cards.html" . }}
 
     <base href="{{ .Permalink }}">
+    
+<!--     //Add SEO scheme.org part -->
+<!--     {{ partial "seo_schema" . }} -->
+<!--     //Add SEO scheme.org part -->
+    
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
     <link rel="canonical" href="{{ .Permalink }}">

@@ -1,32 +1,57 @@
 <section class="container centered">
-  <div class="about">
-    {{ with .Site.Params.avatarurl }}
-      <div class="avatar"><img src="{{ . | relURL }}" alt="avatar"></div>
-    {{ end }}
-    <h1>{{ .Site.Params.author }}</h1>
-    <h2>{{ .Site.Params.info }}</h2>
-    {{ with .Site.Params.social }}
-    <ul>
-      {{ range sort .}}
-        {{ if .icon }}
-          <li>
-            <a href="{{ .url }}" aria-label="{{ .name }}">
-              <i class="{{ .icon }}" aria-hidden></i>
-            </a>
-          </li>
-        {{ else }}
-          <li>
-            <a href="{{ .url }}" aria-label="{{ .name }}">{{ .name }}</a>
-          </li>
+    <div class="about">
+        {{ with .Site.Params.avatarurl }}
+        	<div class="avatar"><img src="{{ . | relURL }}" alt="avatar"></div>
         {{ end }}
-      {{ end }}
-    </ul>
-    {{ end }}
-  </div>
-  <div class="maincontent">
-  	<h3>{{ .Site.Params.headingNow }}</h3>
-  	<p>See my <a href="/now">"now"</a> page<br>
-Got this idea from Derek Sivers which is genius.</p>
-  </div>
 
+        <h1>{{ .Site.Params.author }}</h1>
+        <h2>{{ .Site.Params.info }}</h2>
+        
+        {{ with .Site.Params.social }}
+			<ul>
+				{{ range sort .}}
+					{{ if .icon }}
+						<li>
+							<a href="{{ .url }}" aria-label="{{ .name }}">
+								<i class="{{ .icon }}" aria-hidden></i>
+							</a>
+						</li>
+					{{ else }}
+						<li>
+							<a href="{{ .url }}" aria-label="{{ .name }}">{{ .name }}</a>
+						</li>
+					{{ end }}
+				{{ end }}
+			</ul>
+		{{ end }}
+    </div>
+
+    <div class="maincontent">
+        <h2>Me in 10 seconds</h2>
+
+        <p>I am a life long learner, love all sorts of music (from classical to techno) and really like diving deep into getting the most out of myself in every way possible.<br/><br/>
+        In 2012 I started <a href="https://www.glamorousgoat.nl" target="_blank">app development agency Glamorous Goat</a> because i wanted to do something in the creative space. This is my current occupation and I love working on that business.<br/><br/>
+        Have been living all of my life in The Netherlands, but love traveling the world to learn about different cultures and expand as a person.</p>
+
+        <h2>Want to know more about me?</h2>
+
+        <p>See my <a href="/about/">"about"</a> page.</p>
+
+        <h2>What am I doing now?</h2>
+
+        <p>See my <a href="/now/">"now"</a> page</p>
+        
+        <h2>Projects</h2>
+
+        <p>This is more than a blog, too. I publish notes on everything I learn from books, articles, speeches, video's and more. My notes on the books, articles I have read can be found on the <a href="/notes/"> "notes"</a> page</p>
+
+        <h2>Quotes</h2>
+        <p>I am trying to have a <a href="/quotes/">list of all the quotes</a> that really resonated with me over time.</p>
+        
+        <h2>Contact me?</h2>
+
+        <p>Feel free to contact me if you feel you have something to say. You can send me an email via: info [at] hugomelis [dot] nl</p>
+
+        <p>The idea's on this website are heavily inspired by Derek Sivers and his own personal website. Check it out for a better example of how a personal website should be.</p>
+    </div>
 </section>

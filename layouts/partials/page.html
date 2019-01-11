@@ -1,9 +1,26 @@
 <section class="container page">
-  <article>
-    <header>
-      <h1>{{ .Title }}</h1>
-    </header>
+	{{ if .Page.Params.isBook }}
+		<article class = "booknotes">
+	{{ else }}
+		<article>
+	{{ end }}
+	
+		<header>
+			<h1>{{ .Title }}</h1>
+			
+			<!-- Only show this part for book reviews -->
+			{{ if .Page.Params.isBook }}
+				<p class = "bookheader">
+					ISBN: {{ .Page.Params.ISBN }} <br/>
+					Finished reading on: {{ .PublishDate.Format "2006-01-02" }}<br/>
+					Read additional reviews on <a href="{{ .Page.Params.amazonLink }}" target="_blank">Amazon</a><br/>
+					My rating: {{ .Page.Params.rating }}
+				</p>
+			{{ end }}
+			<!-- Only show this part for book reviews -->
 
-    {{ .Content }}
-  </article>
+		</header>
+
+		{{ .Content }}
+	</article>
 </section>
